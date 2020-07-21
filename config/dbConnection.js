@@ -1,6 +1,7 @@
 var mysql = require('mysql');
 
-module.exports = function(){
+var conn = () => {
+    console.log('conectado no banco');
     return mysql.createConnection({
         host: 'localhost',
         user: 'root',
@@ -8,3 +9,7 @@ module.exports = function(){
         database: 'portalnoticias'
     });
 }
+
+module.exports = () => {
+    return conn;
+};
